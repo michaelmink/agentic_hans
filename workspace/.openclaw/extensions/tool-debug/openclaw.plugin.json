@@ -1,0 +1,8 @@
+{
+  "id": "tool-debug",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

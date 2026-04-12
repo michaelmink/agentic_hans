@@ -1,3 +1,15 @@
+# OpenClaw sensitive data
+secrets.env
+*.env.bak
+openclaw.json.bak*
+workspace/.openclaw/workspace-state.json
+workspace/.clawhub/lock.json
+workspace/skills/*/scripts/venv/
+workspace/skills/briefscanner/scripts/mail_agent.env
+workspace/skills/briefscanner/scripts/test_brief.jpg
+workspace/memory/
+logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

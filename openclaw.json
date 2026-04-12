@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-31T12:51:03.657Z"
+  },
+  "models": {
+    "providers": {
+      "groq": {
+        "baseUrl": "https://api.groq.com/openai/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "llama-3.3-70b-versatile",
+            "name": "Llama 3.3 70B",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "llama-3.1-8b-instant",
+            "name": "Llama 3.1 8B",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "apiKey": "ollama",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "qwen3:14b",
+            "name": "Qwen3 14B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 40960,
+            "maxTokens": 40960
+          },
+          {
+            "id": "qwen3:14b-nothink",
+            "name": "Qwen3 14B NoThink",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 40960,
+            "maxTokens": 40960
+          },
+          {
+            "id": "qwen3:14b-nothink",
+            "name": "Qwen3 14B Fast",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 24576,
+            "maxTokens": 24576
+          },
+          {
+            "id": "qwen3:8b",
+            "name": "Qwen3 8B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 40960,
+            "maxTokens": 40960
+          },
+          {
+            "id": "qwen2.5:14b",
+            "name": "Qwen 2.5 14B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 32768
+          },
+          {
+            "id": "qwen2.5vl:7b",
+            "name": "Qwen 2.5 VL 7B",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 32768
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/qwen3:14b-nothink"
+      },
+      "imageModel": {
+        "primary": "ollama/qwen2.5vl:7b"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "media": {
+      "image": {
+        "enabled": false
+      },
+      "audio": {
+        "enabled": true,
+        "models": [
+          {
+            "provider": "groq",
+            "model": "whisper-large-v3-turbo"
+          }
+        ]
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "accounts": {
+        "default": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "groupPolicy": "allowlist",
+          "debounceMs": 0
+        }
+      },
+      "mediaMaxMb": 50
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "REPLACE_WITH_YOUR_GATEWAY_TOKEN"
+    }
+  },
+  "skills": {
+    "entries": {
+      "google-calendar": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": [
+        "/opt/nodejs/lib/node_modules/openclaw/dist/extensions/whatsapp"
+      ]
+    },
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      },
+      "tool-debug": {
+        "enabled": true
+      }
+    }
+  }
+}
