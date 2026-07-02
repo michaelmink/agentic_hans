@@ -189,6 +189,22 @@ def query_events(args):
     parser.add_argument('--calendars', dest='calendars', help='Comma-separated calendar names')
     parsed = parser.parse_args(args)
 
+    # +++++++++++++++++++++++++++++++++++++++
+    # for debugging locally
+    #parsed = parser.parse_args()
+    #query = 'Zahnarzt'
+    #time_min = '2025-01-01T00:00:00Z'  # 1. Jan 2025
+    #time_max = '2025-12-31T23:59:59Z'  # 31. Dez 2025
+    #calendars = 'Janine'
+    #max_results = 500
+    #parsed.query = query
+    #parsed.time_min = time_min
+    #parsed.time_max = time_max
+    #parsed.calendars = calendars
+    #parsed.max_results = max_results
+
+    # +++++++++++++++++++++++++++++++++++++++
+
     name_map = get_calendar_name_map()
     cal_ids = resolve_calendar_ids(parsed.calendars, name_map, get_calendar_ids())
 

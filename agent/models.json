@@ -1,0 +1,155 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434",
+      "apiKey": "OLLAMA_API_KEY",
+      "api": "ollama",
+      "models": [
+        {
+          "id": "qwen3:14b",
+          "name": "Qwen3 14B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 40960,
+          "maxTokens": 40960,
+          "api": "ollama"
+        },
+        {
+          "id": "qwen3:14b-nothink",
+          "name": "Qwen3 14B NoThink",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 40960,
+          "maxTokens": 40960,
+          "api": "ollama"
+        },
+        {
+          "id": "qwen3:14b-nothink",
+          "name": "Qwen3 14B Fast",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 24576,
+          "maxTokens": 24576,
+          "api": "ollama"
+        },
+        {
+          "id": "qwen3:8b",
+          "name": "Qwen3 8B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 40960,
+          "maxTokens": 40960,
+          "api": "ollama"
+        },
+        {
+          "id": "qwen2.5:14b",
+          "name": "Qwen 2.5 14B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 32768,
+          "api": "ollama"
+        },
+        {
+          "id": "qwen2.5vl:7b",
+          "name": "Qwen 2.5 VL 7B",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 32768,
+          "api": "ollama"
+        }
+      ]
+    },
+    "groq": {
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "llama-3.3-70b-versatile",
+          "name": "Llama 3.3 70B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "api": "openai-completions"
+        },
+        {
+          "id": "llama-3.1-8b-instant",
+          "name": "Llama 3.1 8B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        }
+      ],
+      "apiKey": "GROQ_API_KEY"
+    }
+  }
+}
